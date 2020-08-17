@@ -7,6 +7,8 @@
 
 ## Introduction
 
+![Alt text](./failover_SS.png?raw=true "Title")
+
 ### Objectives
 - setup DNS for DR
 
