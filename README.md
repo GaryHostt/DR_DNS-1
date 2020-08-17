@@ -8,9 +8,14 @@
 ## Introduction
 
 ### Objectives
-- 
+- setup DNS for DR
 
-### Required Artifacts
-- 
+### Pre-Requisites
+- https://www.noip.com/free
+- https://www.oracle.com/a/ocom/docs/cloud/traffic-management-100.pdf
 
-## Navigate to Lab 100
+### Section 1: setup the environment
+- use TF script to provision the environment
+- Create Failover DNS Policy
+  -subpoint
+
