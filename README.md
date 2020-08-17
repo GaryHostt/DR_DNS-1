@@ -15,20 +15,20 @@
 
 ### Documentation
 - [Traffic Management on OCI](https://www.oracle.com/a/ocom/docs/cloud/traffic-management-100.pdf)
+- [Block Volume Backups](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/blockvolumebackups.htm)
+- [Installing Terraform](https://docs.cloud.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformgetstarted.htm)
 
 ### Lab100: setup the environment
-- Use attached TF scripts to provision the environment
-- Create Failover DNS Policy such that if healthcheck in one region fails, this will redirect to a load balancer in a different region
-  - Open Navigation Menu
-  - Under Core Infrastructure, go to Networking and click Traffic Management Steering Policies
-  - Click Create Traffic Management Steering Policy.
-  - In the Create Traffic Management Steering Policy dialog box, select Failover
+- Use attached Terraform scripts to provision the environment
+- Complete standby region load balancer setup in OCI console
+- Configure DNS for home region
   
 ### Lab200: configure & dr-automation run scripts
-- Run scripts to take backups and move them to phoenix from ashburn
-- Drop step 3 where it restores the backup in the script
+- Configure DNS failover to standby region in traffic management
+- Run attached Python scripts to take backups and move them to phoenix from ashburn
+- Restore a backup from the Primary region to compute in the standby region
 
 ### Lab300: simulate disaster
-- Turn off both compute nodes in ashburn, or terminate load balancer
-- Restore backup to 1 node in phoenix
-- After first backup restored, restore backup to 2nd node
+- Drain connections in Primary load balancer
+- Show DNS failover to standby region
+- Scale up compute node in standby region
