@@ -17,5 +17,5 @@
 ### Section 1: setup the environment
 - use TF script to provision the environment
 - Create Failover DNS Policy
-  -subpoint
+  - subpoint
 
