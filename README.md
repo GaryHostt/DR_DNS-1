@@ -12,6 +12,7 @@
 ### Objectives
 - automate block volume backups to new region
 - setup DNS on OCI
+- simpulate disaster and subsequent recovery
 
 ### Documentation
 - [Traffic Management on OCI](https://www.oracle.com/a/ocom/docs/cloud/traffic-management-100.pdf)
@@ -23,7 +24,7 @@
 - Complete standby region load balancer setup in OCI console
 - Configure DNS for home region
   
-### Lab200: configure & dr-automation run scripts
+### Lab200: configure failover & recovery backups
 - Configure DNS failover to standby region in traffic management
 - Run attached Python scripts to take backups and move them to phoenix from ashburn
 - Restore a backup from the Primary region to compute in the standby region
