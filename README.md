@@ -26,7 +26,7 @@
   
 ### Lab200: configure failover & recovery backups
 - Configure DNS failover to standby region in traffic management
-- Run attached Python scripts to take backups and move them to phoenix from ashburn
+- Run attached Python scripts to take backups and move them from primary to standby region
 - Restore a backup from the Primary region to compute in the standby region
 
 ### Lab300: simulate disaster
