@@ -29,7 +29,7 @@
 - Run attached Python scripts to take backups and move them from primary to standby region
 - Restore a backup from the Primary region to compute in the standby region
 
-### [Lab300: Simulate Disaster](https://github.com/arshyasharifian/DR_DNS/blob/master/Lab300/LabGuide300.md)
+### [Lab300: Simulate Disaster](https://github.com/arshyasharifian/DR_DNS/blob/master/LabGuide300.md)
 - Drain connections in Primary load balancer
 - Show DNS failover to standby region
 - Scale up compute node in standby region
