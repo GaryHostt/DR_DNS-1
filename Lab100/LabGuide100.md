@@ -17,13 +17,17 @@ This solution provides a Network Architecture deployment to demonstrate Disaster
 2. Install Terraform. See https://learn.hashicorp.com/terraform/getting-started/install.html.
 
 3. Setup tenancy values for terraform variables by updating **env-vars** file with the required information. The file contains definitions of environment variables for your Oracle Cloud Infrastructure tenancy.
-    ```
+    The following example is using London as the primary region.
+    ![](100screenshots/env-vars-example.PNG)
+    
+   ```
     $ source env-vars
     ```
-
+    
 4. Create **terraform.tfvars** from *terraform.tfvars.sample* file with the inputs for the architecture that you want to build. A running sample terraform.tfvars file is available below. The contents of sample file can be copied to create a running terraform.tfvars input file. Update db_admin_password with actual password in terraform.tfvars file.
 
-
+    ![](100screenshots/terrform_var.PNG)
+    
 5. Deploy the topology:
 
 -   **Deploy Using Terraform**
@@ -100,7 +104,24 @@ remote_ssh_public_key_file   = "~/.ssh/id_rsa.pub"
 # path to private ssh key for all app instances
 remote_ssh_private_key_file  = "~/.ssh/id_rsa"
 ```
+## Example of the results terraform will produce.
+ *Example: Instances in the Primary Region*
 
+ ![](100screenshots/App-Server(Primary).PNG)
+ 
+ *Example: Database system in the Primary Region*
+
+ ![](100screenshots/DB-System(Primary).PNG)
+ 
+ *Example: Instance in the Secondary Region*
+
+ ![](100screenshots/DB-System(Secondary).PNG)
+ 
+ *Example: Database system in the Secondary Region*
+
+ ![](100screenshots/DB-System(Secondary).PNG)
+ 
+## Configurations the DNS for failover.
 
 ## Troubleshooting
 
