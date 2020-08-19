@@ -14,14 +14,13 @@ This lab walks your through how to automate your block and boot volumes backups 
 ### Objectives
 - Configure DNS failover to standby region in traffic management
 - Run attached Python scripts to take backups and move them from primary to standby region
-- Restore a backup from the Primary region to compute in the standby region
 
 ### Required Artifacts
 -   Attached Python scripts
     - block-volume-migration.py
     - boot-volume-migration.py
 -   Configure OCI SDK
--   Relevant IAM permissions in your tenancy
+-   Relevant IAM permissions in your tenancy to manage [DNS](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Reference/dnspolicyreference.htm) & [block volumes](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Reference/corepolicyreference.htm#Details_for_the_Core_Services)
 
 ### Extra Resources
 
