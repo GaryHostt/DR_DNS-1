@@ -38,22 +38,24 @@ This lab walks your through how to automate your block and boot volumes backups 
 
 1.   Boot Volume script (boot-volume-migration.py) takes all volume from one region for a given compartment and restores this volume across any given region thru volume backups
 
+```
 usage: boot-volume-migration.py [-h] 
             --compartment-id COMPARTMENT_ID
 
             --destination-region DESTINATION_REGION
 
             --availability-domain AVAILABILITY_DOMAIN
+```
 
 2. Block Volume script (block-volume-migration.py) takes all volume from one region for a given compartment and restores this volume across any given region thru volume backups
-
+```
 usage: block-volume-migration.py [-h] 
              --compartment-id COMPARTMENT_ID
 
              --destination-region DESTINATION_REGION
 
              --availability-domain AVAILABILITY_DOMAIN
-
+```
 Steps in the automation scripts:
 1. create_volume_backups in source region
 2. copy_volume_backups across destination region
@@ -76,11 +78,11 @@ python boot-volume-migration.py --compartment-id ocid1.compartment.oc1..aaaaaaaa
 
 Below you can see the volume backups now created in your source region, our's is London.
 
-![](./screenshots/Lab200/source.png " ")
+![](./screenshots/200screenshots/source.png " ")
 
 And in your destination region, you should be able to see the backups there as well from your specified source region.
 
-![](./screenshots/Lab200/destination.png " ")
+![](./screenshots/200screenshots/destination.png " ")
 
 -   Click the **Register a Demo**.
 
