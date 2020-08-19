@@ -106,7 +106,7 @@ python block-volume-migration.py --compartment-id ocid1.compartment.oc1..123 --d
 ```
 
 ```
-python boot-volume-migration.py --compartment-id ocid1.compartment.oc1..aaaaaaaafofzhn5ni45serz4yqmweruxmxtkbhe2ie7b234u5hvfiwq6htnq --destination-region eu-frankfurt-1 --availability-domain AD-2
+python boot-volume-migration.py --compartment-id ocid1.compartment.oc1..aaaaanq --destination-region eu-frankfurt-1 --availability-domain AD-2
 ```
 
 Below you can see the volume backups now created in your source region, our's is London.
