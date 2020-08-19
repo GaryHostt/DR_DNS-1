@@ -9,11 +9,7 @@
 ## Introduction
 
 *In addition to the workshop*, feel free to watch the walk-through companion video by clicking on the following link:
-[Lab 300A Walkthrough Video]()
-
-In this lab, you will use 
-
-![](./images/Notionalarch.png " ")
+[Lab 300 Walkthrough Video]()
 
 ### Objectives
 - Drain connections in Primary load balancer
@@ -49,9 +45,9 @@ Set the drain state to True. This will stop all current connections and simulate
 
 Your health check on your primary region is now failing, and traffic hitting your DNS should now be routed to your standby region. 
 ![](./screenshots/300screenshots/300a.png)
-![](./screenshots/300screenshots/300b.png)
-![](./screenshots/300screenshots/300c.png)
 
+If you installed the HTML to your standby server, you should now see this. You can see our DNS entry - 'oci.life' with the subdomain 'alexmcdonald'.
+![](./screenshots/300screenshots/300c.png)
 
 If you navigate to health/check traffic steering - you can see the health for the Primary region load balancer is now critical. If you visit the IP address of this load balancer, you will get 502 bad gateway. 
 
@@ -81,7 +77,7 @@ The following link will help you setup the rest api key that python needs to run
 
 ## Summary
 
--   In this lab, you learned how to build an end to end integration with Oracle Cloud ERP and the Autonomous Data Warehouse using the Oracle integration platforms low-code development platform.
+-   In this lab, you learned how to simulate a disaster event, and redirect traffic to your standby region.
 
 -   **You are ready to move on to the next lab!**
 
