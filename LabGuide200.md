@@ -5,7 +5,7 @@
 [Introduction](#introduction)
 -->
 
-![](./screenshots/200screenshots/backup.png " ")
+![](./screenshots/200screenshots/intro.png " ")
 
 ## Introduction
 
