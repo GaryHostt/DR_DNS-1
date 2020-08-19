@@ -3,18 +3,18 @@
 Disaster Recovery Network and connectivity setup
 =======================================================
 
-This solution provides a Network Architecture deployment to demonstrate Disaster Recovery scenario across 2 regions [ examples are geared towards region Ashburn & Phoenix and can be used for any OCI regions].
+This solution provides a Network Architecture deployment to demonstrate Disaster Recovery scenario across 2 regions [examples are geared towards region Ashburn & Phoenix, but any region in OCI can be used].
 
 
 ## Quickstart Deployment
 
 1. Clone this repository to your local host. The `pilot-light` directory contains the Terraform configurations for a sample topology based on the architecture described earlier.
     ```
-    $ git clone https://orahub.oci.oraclecorp.com/oci-ocbd-custom-app/disaster-recovery.git
+    $ git clone XXXX
     $ cd disaster-recovery/pilot-light
     ```
 
-2. Install Terraform. See https://learn.hashicorp.com/terraform/getting-started/install.html.
+2. [Install Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html). 
 
 3. Setup tenancy values for terraform variables by updating **env-vars** file with the required information. The file contains definitions of environment variables for your Oracle Cloud Infrastructure tenancy.
     The following example is using London as the primary region.
