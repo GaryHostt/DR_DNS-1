@@ -61,7 +61,7 @@ Please follow steps in [lab200](https://github.com/arshyasharifian/DR_DNS/blob/m
 ### **STEP 2**: Run Python scripts
 
 This [link](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Required_Keys_and_OCIDs) will help you setup the rest api key that python needs to run scaling script.
-
+This [link](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm) example of a configuration file.
 *The script will not continue unitl the scaling is complete. Check the OCI console work request to see when the instance will be available again.*
 ![](./screenshots/300screenshots/python-scaling.PNG)
 
