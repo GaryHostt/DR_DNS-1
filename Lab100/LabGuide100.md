@@ -128,12 +128,20 @@ remote_ssh_private_key_file  = "~/.ssh/id_rsa"
 ### Create a new DNS zone
 1.![](100screenshots/DNS-Zone.png)
 
+To create a new DNS zone, you will need to own a relevant DNS record. 
+
 2.![](100screenshots/DNS-Zone-Information.png)
+
+Here we register our DNS, oci.life.
 
 ### Attach a subdomain to the DNS zone
 1.![](100screenshots/DNS-Zone-Subdomain-Step1.png)
 
+You can create whatever and howmany subdomains you want after you have your DNS host. 
+
 2.![](100screenshots/DNS-Zone-Subdomain-Step2.png)
+
+This is an additional subdomain.
 
 3.Publish to finish attaching.
 
