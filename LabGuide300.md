@@ -4,7 +4,7 @@
 [Introduction](#introduction)
 -->
 
-![](./images/intro.png " ")
+![](./screenshots/300screenshots/Scaling-Finished.PNG)
 
 ## Introduction
 
