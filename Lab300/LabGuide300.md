@@ -1,4 +1,4 @@
-# Lab 300: simulate disaster
+# Lab 300: Simulate Disaster
 <!-- Comment out table of contents
 ## Table of Contents
 [Introduction](#introduction)
@@ -24,9 +24,9 @@ In this lab, you will use Oracle Integration to make a connection to your Cloud 
 -   To learn more about Load Balancer, feel free to explore the capabilities by clicking on this link: [Load Balancer Documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/Balance/Concepts/balanceoverview.htm)
 -   To learn more about , how the OCI API scales up the compute node, here is the relevant [documentation](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/UpdateInstanceDetails).
 
-## Part 1. The disaster
+## Part 1. The Disaster
 
-### **STEP 1**: Drain connections from Primary Load Balancer
+### **STEP 1**: Drain connections from Primary Region Load Balancer
 
 Navigate from the upper left hamburger menu to networking -> Load balancers. Find the Load Balancer in your primary region.
 
@@ -38,9 +38,13 @@ Now, enter your DNS url in your web browswer, you should see the HTML indicating
 
 ### **
 
-## Part 2. Scaling disaster compute
+## Part 2. Scaling the standby region compute node
 
 ### **STEP 1**: Configure SDK
+
+Please follow steps in [lab200] to configure the SDK for your python scripts to call resources in your tenancy.
+
+### **STEP 2**: Run Python scripts
 
 
 
