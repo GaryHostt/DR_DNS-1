@@ -133,8 +133,65 @@ remote_ssh_private_key_file  = "~/.ssh/id_rsa"
 
 2.![](100screenshots/DNS-Zone-Subdomain-Step2.png)
 
+<<<<<<< HEAD
+### Create the failover policy
+1. Configure the failover policy.
+![](100screenshots/Failover-Policy.png)
+
+2. Policy information page.
+![](100screenshots/Failover-Policy-Configuration.png)
+
+3. Publish the the policy.
+=======
 3.Publish to finish attaching.
+>>>>>>> 1edd26c50c1caec4c537a277a3ed13e9310bfb6d
 ![](100screenshots/Failover-Policy-Publish.png)
+
+# Adding Html to the compute instances.
+## Primary Instance
+*Replace the index.html with the following text.*
+*vi /var/www/html/index.html*
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>This is your primary region.</h1>
+<p>Located in London. App server 1</p>
+<img src="http://media.breitbart.com/media/2015/06/Larry-Ellison-Kimberly-White-Getty.jpg" alt="Larry Ellison" width="600" height="670">
+</body>
+</html>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>This is your primary region.</h1>
+<p>Located in London. App server 2</p>
+<img src="http://media.breitbart.com/media/2015/06/Larry-Ellison-Kimberly-White-Getty.jpg" alt="Larry Ellison" width="600" height="670">
+</body>
+</html>
+</body>
+</html>
+
+
+## Secondary Instance
+*Replace the index.html with the following text.*
+*vi /var/www/html/index.html*
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>This is your standby region.</h1>
+<p>Located in Frankfurt.</p>
+
+<img src="http://static2.businessinsider.com/image/562e552fbd86ef335d8b9a2b/theres-a-good-reason-why-larry-ellison-never-sees-ibm-anymore.jpg" alt="Larry Ellison" width="600" height="670">
+
+</body>
+
+
 
 ## Troubleshooting
 
