@@ -4,7 +4,7 @@
 [Introduction](#introduction)
 -->
 
-![](./screenshots/300screenshots/300intro)
+![](./screenshots/300screenshots/300intro.png)
 
 ## Introduction
 
