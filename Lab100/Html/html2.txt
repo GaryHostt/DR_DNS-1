@@ -11,3 +11,7 @@
 <img src="http://static2.businessinsider.com/image/562e552fbd86ef335d8b9a2b/theres-a-good-reason-why-larry-ellison-never-sees-ibm-anymore.jpg" alt="Larry Ellison" width="600" height="670">
 
 </body>
+
+# After you have updated the index.html file.
+# run the following command.
+# systemctl restart httpd

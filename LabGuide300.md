@@ -67,7 +67,14 @@ Please follow steps in [lab200] to configure the SDK for your python scripts to 
 
 ### **STEP 2**: Run Python scripts
 
+*The script will not continue unitl the scaling is complete. Check the OCI console work request to see when the instance will be available again.*
+![](./screenshots/300screenshots/python-scaling.PNG)
 
+*The instance will be shutdown while the update takes place.*
+![](./screenshots/300screenshots/Scaling-Start.PNG)
+
+*You can now log into the instance again*
+![](./screenshots/300screenshots/Scaling-Finished.PNG)
 
 ## Summary
 

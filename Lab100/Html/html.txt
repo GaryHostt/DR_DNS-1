@@ -24,3 +24,7 @@
 </html>
 </body>
 </html>
+
+# After you have updated the index.html file.
+# run the following command.
+# systemctl restart httpd
