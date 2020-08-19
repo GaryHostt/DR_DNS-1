@@ -31,17 +31,27 @@ In this lab, you will use
 
 ![](./screenshots/300screenshots/1.png)
 
+
+Navigate from the upper left hamburger menu to networking -> Load balancers. Find the Load Balancer in your primary region.
+
 ![](./screenshots/300screenshots/2.png)
+
+Go to your backend set. 
 ![](./screenshots/300screenshots/3.png)
+
+Check mark your backends. Then press actions.
+
 ![](./screenshots/300screenshots/4.png)
+
+Set the drain state to True. This will stop all current connections and simulate the disaster. 
+
 ![](./screenshots/300screenshots/5.png)
+
+Your health check on your primary region is now failing, and traffic hitting your DNS should now be routed to your standby region. 
 ![](./screenshots/300screenshots/300a.png)
 ![](./screenshots/300screenshots/300b.png)
 ![](./screenshots/300screenshots/300c.png)
 
-Navigate from the upper left hamburger menu to networking -> Load balancers. Find the Load Balancer in your primary region.
-
-Navigate to backend sets, click the 3 dots on the right, and then drain the connections. 
 
 If you navigate to health/check traffic steering - you can see the health for the Primary region load balancer is now critical. If you visit the IP address of this load balancer, you will get 502 bad gateway. 
 
