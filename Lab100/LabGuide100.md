@@ -115,13 +115,23 @@ remote_ssh_private_key_file  = "~/.ssh/id_rsa"
  
  *Example: Instance in the Secondary Region*
 
- ![](100screenshots/DB-System(Secondary).PNG)
+ ![](100screenshots/App-Server(Secondary).png)
  
  *Example: Database system in the Secondary Region*
 
  ![](100screenshots/DB-System(Secondary).PNG)
  
-## Configurations the DNS for failover.
+## Configuring the DNS for failover.
+
+*Create a new DNS zone*
+![](100screenshots/DNS-Zone.png)
+
+![](100screenshots/DNS-Zone-Information.png)
+
+*Attach a subdomain to the DNS zone*
+![](100screenshots/DNS-Zone-Subdomain-Step1.png)
+
+![](100screenshots/DNS-Zone-Subdomain-Step2.png)
 
 ## Troubleshooting
 
