@@ -133,14 +133,7 @@ remote_ssh_private_key_file  = "~/.ssh/id_rsa"
 
 2.![](100screenshots/DNS-Zone-Subdomain-Step2.png)
 
-### Create the failover policy
-1.Configure the failover policy.
-![](100screenshots/Failover-Policy.png)
-
-2.Policy information page.
-![](100screenshots/Failover-Policy-Configuration.png)
-
-3.Publish the the policy.
+3.Publish to finish attaching.
 ![](100screenshots/Failover-Policy-Publish.png)
 
 ## Troubleshooting
