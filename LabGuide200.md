@@ -5,6 +5,8 @@
 [Introduction](#introduction)
 -->
 
+![](./screenshots/200screenshots/intro.png " ")
+
 ## Introduction
 
 This lab walks your through how to automate your block and boot volumes backups to a new region. Should disaster strike your home region, it is critical to have the backups elsewhere. Then you will configure the Traffic Management policy where if your servers in your home region are down, your DNS entry will re-route visitors to your site to your standby region.
