@@ -123,17 +123,17 @@ remote_ssh_private_key_file  = "~/.ssh/id_rsa"
  
 ## Configuring the DNS for failover.
 
-###Create a new DNS zone
+### Create a new DNS zone
 1.![](100screenshots/DNS-Zone.png)
 
 2.![](100screenshots/DNS-Zone-Information.png)
 
-###Attach a subdomain to the DNS zone
+### Attach a subdomain to the DNS zone
 1.![](100screenshots/DNS-Zone-Subdomain-Step1.png)
 
 2.![](100screenshots/DNS-Zone-Subdomain-Step2.png)
 
-###Create the failover policy
+### Create the failover policy
 1.Configure the failover policy.
 ![](100screenshots/Failover-Policy.png)
 
