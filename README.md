@@ -12,7 +12,7 @@
 ### Objectives
 - automate block volume backups to new region
 - setup DNS on OCI
-- simpulate disaster and subsequent recovery
+- simulate disaster and subsequent recovery
 
 ### Documentation
 - [Traffic Management on OCI](https://www.oracle.com/a/ocom/docs/cloud/traffic-management-100.pdf)
