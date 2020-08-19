@@ -24,7 +24,7 @@
 - Complete standby region load balancer setup in OCI console
 - Configure DNS for home region
   
-### Lab200: configure failover & recovery backups
+### [Lab200: configure failover & recovery backups](https://github.com/arshyasharifian/DR_DNS/blob/master/LabGuide200.md)
 - Configure DNS failover to standby region in traffic management
 - Run attached Python scripts to take backups and move them from primary to standby region
 - Restore a backup from the Primary region to compute in the standby region
