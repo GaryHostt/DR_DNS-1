@@ -32,7 +32,33 @@ This lab walks your through how to automate your block and boot volumes backups 
 
 ## Part 1. DNS traffic steering
 
-![](./screenshots/200screenshots/1.png " ")
+![](./screenshots/200screenshots/2.png " ")
+
+From the OCI console, under networking go to the traffic steering policies.
+
+![](./screenshots/200screenshots/3.png " ")
+
+Create a failover traffic steering policy.
+
+![](./screenshots/200screenshots/4.png " ")
+
+This policy will point your DNS to your standby region's load balancer if your primary region's load balancer fails the health check. 
+
+![](./screenshots/200screenshots/5.png " ")
+
+You can get your load balancer IPs from Netowrking -> Load balancers. Make sure you are in the correct regions. 
+
+![](./screenshots/200screenshots/6.png " ")
+
+You can see, we switch regions on the upper right to get the IP of the LB in the standby region, Frankfurt.
+
+![](./screenshots/200screenshots/7.png " ")
+
+![](./screenshots/200screenshots/8.png " ")
+Input the information like above. 
+![](./screenshots/200screenshots/9.png " ")
+Make sure to attach the health check to your primary region's load balancer, this is what determines if traffic should be re-directed to your standby region. 
+
 
 ## Part 2. Running the Python scripts
 
