@@ -22,17 +22,16 @@
 
 ## Part 1. The Disaster
 
-### **STEP 1**: Drain connections from Primary Region Load Balancer
-
+### Drain connections from Primary Region Load Balancer
 
 ![](./screenshots/300screenshots/1.png)
-
 
 Navigate from the upper left hamburger menu to networking -> Load balancers. Find the Load Balancer in your primary region.
 
 ![](./screenshots/300screenshots/2.png)
 
 Go to your backend set. 
+
 ![](./screenshots/300screenshots/3.png)
 
 Check mark your backends. Then press actions.
@@ -53,13 +52,11 @@ If you navigate to health/check traffic steering - you can see the health for th
 
 Now, enter your DNS url in your web browswer, you should see the HTML indicating you are now seeing traffic steered to your standby region. 
 
-### **
-
 ## Part 2. Scaling the standby region compute node
 
 ### **STEP 1**: Configure SDK
 
-Please follow steps in [lab200] to configure the SDK for your python scripts to call resources in your tenancy.
+Please follow steps in [lab200](https://github.com/arshyasharifian/DR_DNS/blob/master/LabGuide200.md) to configure the SDK for your python scripts to call resources in your tenancy.
 
 ### **STEP 2**: Run Python scripts
 
