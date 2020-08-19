@@ -59,6 +59,10 @@ Input the information like above.
 ![](./screenshots/200screenshots/9.png " ")
 Make sure to attach the health check to your primary region's load balancer, this is what determines if traffic should be re-directed to your standby region. 
 
+![](./screenshots/200screenshots/1.png " ")
+
+This is a summary of your traffic steering policy.
+
 
 ## Part 2. Running the Python scripts
 
