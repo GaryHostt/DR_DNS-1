@@ -30,6 +30,9 @@ This lab walks your through how to automate your block and boot volumes backups 
 - [Copying Volume Backups](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Tasks/copyingvolumebackupcrossregion.htm)
 - [Restoring Volume backups](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Tasks/restoringavolumefromabackup.htm)
 
+## Part 1. DNS traffic steering
+
+![](./screenshots/200screenshots/1.png " ")
 
 ## Part 2. Running the Python scripts
 
