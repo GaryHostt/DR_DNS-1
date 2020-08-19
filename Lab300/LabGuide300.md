@@ -29,15 +29,15 @@ In this lab, you will use
 ### **STEP 1**: Drain connections from Primary Region Load Balancer
 
 
-![](./300screenshots/1.png)
+![](./screenshots/300screenshots/1.png)
 
-![](./300screenshots/2.png)
-![](./300screenshots/3.png)
-![](./300screenshots/4.png)
-![](./300screenshots/5.png)
-![](./300screenshots/300a.png)
-![](./300screenshots/300b.png)
-![](./300screenshots/300c.png)
+![](./screenshots/300screenshots/2.png)
+![](./screenshots/300screenshots/3.png)
+![](./screenshots/300screenshots/4.png)
+![](./screenshots/300screenshots/5.png)
+![](./screenshots/300screenshots/300a.png)
+![](./screenshots/300screenshots/300b.png)
+![](./screenshots/300screenshots/300c.png)
 
 Navigate from the upper left hamburger menu to networking -> Load balancers. Find the Load Balancer in your primary region.
 
