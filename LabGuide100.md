@@ -20,7 +20,7 @@ This solution provides a Network Architecture deployment to demonstrate Disaster
 
 3. Setup tenancy values for terraform variables by updating **env-vars** file with the required information. The file contains definitions of environment variables for your Oracle Cloud Infrastructure tenancy.
     The following example is using London as the primary region.
-    ![](100screenshots/env-vars-example.PNG)
+    ![](./screenshots/100screenshots/env-vars-example.PNG)
     
    ```
     $ source env-vars
@@ -28,7 +28,7 @@ This solution provides a Network Architecture deployment to demonstrate Disaster
     
 4. Create **terraform.tfvars** from *terraform.tfvars.sample* file with the inputs for the architecture that you want to build. A running sample terraform.tfvars file is available below. The contents of sample file can be copied to create a running terraform.tfvars input file. Update db_admin_password with actual password in terraform.tfvars file.
 
-    ![](100screenshots/terrform_var.PNG)
+    ![](./screenshots/100screenshots/terrform_var.PNG)
     
 5. Deploy the topology:
 
@@ -109,35 +109,35 @@ remote_ssh_private_key_file  = "~/.ssh/id_rsa"
 ## Example of the results terraform will produce.
  *Example: Instances in the Primary Region*
 
- ![](100screenshots/App-Server(Primary).PNG)
+ ![](./screenshots/100screenshots/App-Server(Primary).PNG)
  
  *Example: Database system in the Primary Region*
 
- ![](100screenshots/DB-System(Primary).PNG)
+ ![](./screenshots/100screenshots/DB-System(Primary).PNG)
  
  *Example: Instance in the Secondary Region*
 
- ![](100screenshots/App-Server(Secondary).png)
+ ![](./screenshots/100screenshots/App-Server(Secondary).png)
  
  *Example: Database system in the Secondary Region*
 
- ![](100screenshots/DB-System(Secondary).PNG)
+ ![](./screenshots/100screenshots/DB-System(Secondary).PNG)
  
 ## Configuring the DNS for failover.
 
 ### Create a new DNS zone
-1.![](100screenshots/DNS-Zone.png)
+1.![](./screenshots/100screenshots/DNS-Zone.png)
 
-2.![](100screenshots/DNS-Zone-Information.png)
+2.![](./screenshots/100screenshots/DNS-Zone-Information.png)
 
 ### Attach a subdomain to the DNS zone
-1.![](100screenshots/DNS-Zone-Subdomain-Step1.png)
+1.![](./screenshots/100screenshots/DNS-Zone-Subdomain-Step1.png)
 
-2.![](100screenshots/DNS-Zone-Subdomain-Step2.png)
+2.![](./screenshots/100screenshots/DNS-Zone-Subdomain-Step2.png)
 
 3.Publish to finish attaching.
 
-![](100screenshots/Failover-Policy-Publish.png)
+![](./screenshots/100screenshots/Failover-Policy-Publish.png)
 
 # Adding Html to the compute instances.
 
