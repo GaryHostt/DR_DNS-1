@@ -144,10 +144,10 @@ remote_ssh_private_key_file  = "~/.ssh/id_rsa"
 You can place these HTML files in your app-tier compute nodes to demonstrate the DR working by displaying different HTML pages depending on which region you are hitting. You can see this information in the IP address as well, but this is additional visual stimulation.
 
 ## Primary Instance
-*Follow the instruction in html.txt*
+*Follow the instructions in the [html file](HTML-Instructions.txt)*
 
 ## Secondary Instance
-*Follow the instruction in html1.txt*
+*Follow the instructions in the [html file](HTML-Instructions.txt)*
 
 
 ## Troubleshooting
