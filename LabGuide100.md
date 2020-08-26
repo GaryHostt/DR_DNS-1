@@ -61,60 +61,44 @@ Description
 dr_region
 standby region in which to operate, example: us-ashburn-1, us-phoenix-1, ap-seoul-1, ap-tokyo-1, ca-toronto-1>
 
-
 dr_vcn_cidr_block
 CIDR block of the VCN (Virtual Cloud Network) to be created in standby region. make sure the VCN CIDR blocks of primary and standby regions do not overlap
-
 
 vcn_cidr_block
 CIDR block of the VCN (Virtual Cloud Network) to be created in primary region. make sure the VCN CIDR blocks of primary and standby regions do not overlap
 
-
 vcn_dns_label
 DNS Label of the VCN (Virtual Cloud Network) to be created.
-
 
 bucket_display_name
 Display name of the object storage bucket, this name will be prefixed with region name to keep unique name across regions
 
-
 bastion_server_shape
 This is compute shape for bastion server. For more information on available shapes, see VM Shapes
-
-
 
 app_server_shape
 This is compute shape for application servers deployed in primary region for hosting application. For more information on available shapes, see VM Shapes
 
-
-
 db_display_name
 The user-provided name of the Database Home
-
 
 db_system_shape
 The shape of the DB system. The shape determines resources allocated to the DB system.For virtual machine shapes, the number of CPU cores and memory and for bare metal and Exadata shapes, the number of CPU cores, memory, and storage. To get a list of shapes, use the ListDbSystemShapes operation.
 
-
 db_admin_password
 A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, #, or -.
-
 
 lb_shape
 A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the ListShapes operation. Example: 100Mbps
 
-
 cron_schedule
 Cron schedule of backup/restore of boot/block volumes in Primary region. Example: "0 */12 * * *" this runs every 12 hours. This cron job runs on the bastion server
-
 
 dr_cron_schedule
 Cron schedule of backup/restore of boot/block volumes in Standby region. Example: ""#0 */12 * * *"" this is commented out intentionally as the region is in standby mode. When switchover to this region happens then this should be uncommented
 
-
 snapshot_frequency
 Cron schedule for taking snapshots of file storage system in Primary region, this is taken on primary_app_server_1. Example "@hourly" for taking hourly snapshots
-
 
 data_sync_frequency
 Cron schedule for synchronizing the file storage system between both standby and primary region. The rsync job is run as part of this cron scheduler on the compute "dr_replication_server" in standby region. Example "*/30 * * * *" this runs every 30 minutes
