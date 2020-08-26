@@ -26,8 +26,9 @@
   
 ### [Lab200: Configure Failover & Recovery Backups](https://github.com/arshyasharifian/DR_DNS/blob/master/LabGuide200.md)
 - Configure DNS failover to standby region in traffic management
-- Run attached Python scripts to take backups and move them from primary to standby region
+- Optionally, run attached Python scripts to take backups and move them from primary to standby region
 - Restore a backup from the Primary region to compute in the standby region
+- See how terraform will configure your backup automation, rsync, and Active Data Guard
 
 ### [Lab300: Simulate Disaster](https://github.com/arshyasharifian/DR_DNS/blob/master/LabGuide300.md)
 - Drain connections in Primary load balancer
