@@ -170,21 +170,39 @@ And in your destination region, you should be able to see the backups there as w
 
 ![](./screenshots/200screenshots/destination.png " ")
 
--   Click the **Register a Demo**.
-
-
 ## Part 3. Object Storage Replication
+
+The terraform script will also configure object storage bucket replication across your regions. 
+
+Navigate to OCI Console in your primary region to the object storage bucket and upload one or more files.
+
+Navigate to OCI Console in your standby region to the bucket and verify that the files uploaded in primary region show up.
+
+Now delete the files in your primary region's bucket and verify the files are deleted in your DR region.
 
 ## Part 4. File Storage Replication
 
+The terraform script will also configure rsync between the file storage systems across the regions. 
+
+A CRON job is setup in primary region on the APP-server-1 compute to take snapshot every hour and another CRON job is setup in standby region's replication compute server to do a rsync across region every 30 mins.
+
+SSH into APP-server-1 compute through the bastion host and drop a file at location '/home/opc/src_filestore/' .
+
+Verify the snapshot through OCI console in File Storage/File Systems screen.
+
+Verify the file gets replicated to the standby region's FSS.
+
+SSH into private server IP of the replication_compute server, and navigate to '/home/opc/dst_filestore' and verify the file exists there.
+
 ## Part 5. Database Replication
 
+The terraform script also configures active dataguard between the databases in both regions.
 
-
+Validation can be done by doing DDL/DML transactions on database in the primary region and then checking that these transactions are replicated to the database in the standby/DR region.
 
 ## Summary
 
--   In this lab, you used the OCI Python SDK to automate your block volume backups to another region, and then restore them. You configured your DNS to route to your standby-DR region in the event of a disaster in your primary region. In the next lab, we will be simulating a disaster.
+-   In this lab, you used the OCI Python SDK to automate your block volume backups to another region, and then restore them. You configured your DNS to route to your standby-DR region in the event of a disaster in your primary region. In the next lab, we will be simulating a disaster. You also have working rsync between your object storage buckets and file storage systems between your primary and DR regions. Lastly, the databases in your regions are now connected with Active Data Guard, but you can see how to manually configure that [here].
 
 -   **You are ready to move on to the next lab!**
 
