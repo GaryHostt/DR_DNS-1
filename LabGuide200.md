@@ -18,9 +18,21 @@ This lab walks your through how to automate your block and boot volumes backups 
 - Run attached Python scripts to take backups and move them from primary to standby region
 
 ### Required Artifacts
--   Attached Python scripts
+-   Included Python scripts
     - block-volume-migration.py
     - boot-volume-migration.py
+    - located: 
+    ```
+    .
+└── pilot-light
+    ├── README.md
+    ├── assets
+    │   ├── scripts
+    │   │   ├── README.md
+    │   │   ├── block-volume-migration.py
+    │   │   ├── boot-volume-migration.py
+
+    ```
 -   Configure OCI SDK
 -   Relevant IAM permissions in your tenancy to manage [DNS](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Reference/dnspolicyreference.htm) & [block volumes](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Reference/corepolicyreference.htm#Details_for_the_Core_Services)
 
@@ -67,7 +79,7 @@ Make sure to attach the health check to your primary region's load balancer, thi
 This is a summary of your traffic steering policy.
 
 
-## Part 2. Running the Python scripts
+## Part 2. Block & boot volume backup automation with Python
 
 ### **STEP 0**: What do the scripts do
 
@@ -96,6 +108,45 @@ Steps in the automation scripts:
 2. copy_volume_backups across destination region
 3. restore_volume in destination region
 
+## Verify the scripts ran from terraform-apply ##
+
+The terraform script configures a cron job on bastion server to run the python scripts which copies boot/block volumes and restores them across to Standby region (default schedule is set for 12 hours).
+
+Navigate to OCI Console and verify that both boot volumes and block volumes are copied to standby region, in this case Frankfurt. You can tweak the cron scheduler on bastion server of Primary region using "crontab -e" for testing purposes or as needed.
+
+### Attach copied volumes to DR region compute ###
+
+On the OCI console, change to your specified DR region.
+
+Create a new compute instance in the app_subnet.
+
+Click "change image" and select boot volume.
+There select the restore boot volume copied over thru volume backup from source region, London.
+
+Submit the instance to be created. 
+
+SSH into the newly created recovered instance
+
+You can verify with curl htttp://localhost is working as long as the html is displayed.
+
+This confirms that boot volume DR scenario is working as expected.
+
+Go to this directory with 'cd /etc/fstab', comment out the last line of UUID mapping, and save the file.
+
+Naviate to 'Attached Block Volumes" on OCI Console -> Compute -> select the compute you just created. 
+
+Click attach block volume and select the restored block volume copied over through volume backup from source region, London.
+
+Select the device path "/dev/oracleoci/oraclevdb".
+
+Finish the volume attachment.
+
+Navigate to the backend set of the public load balancer add the newly created compute to the backend set.
+
+Verify the application is working as expected in DR region Frankfurt by navigating to the load balancer url.
+
+## Alternative: Run the scripts yourself ##
+
 ### **STEP 1**: Configure the scripts for your tenancy
 
 -   Once at the [homepage](https://demo.oracle.com/apex/f?p=DEMOWEB:HOME::::::), navigate to the "Demos" section. 
@@ -120,6 +171,13 @@ And in your destination region, you should be able to see the backups there as w
 ![](./screenshots/200screenshots/destination.png " ")
 
 -   Click the **Register a Demo**.
+
+
+## Part 3. Object Storage Replication
+
+## Part 4. File Storage Replication
+
+## Part 5. Database Replication
 
 
 
