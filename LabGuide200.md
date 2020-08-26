@@ -43,6 +43,8 @@ This lab walks your through how to automate your block and boot volumes backups 
 - [Creating Volume Backups](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/blockvolumebackups.htm)
 - [Copying Volume Backups](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Tasks/copyingvolumebackupcrossregion.htm)
 - [Restoring Volume backups](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Tasks/restoringavolumefromabackup.htm)
+- [File Storage](https://docs.cloud.oracle.com/en-us/iaas/Content/File/Concepts/filestorageoverview.htm)
+- [Active Data Guard](https://www.oracle.com/database/technologies/high-availability/dataguard.html)
 
 ## Part 1. DNS traffic steering
 
