@@ -10,16 +10,12 @@ This solution provides a Network Architecture deployment to demonstrate Disaster
 
 ## Quickstart Deployment
 
-1. Clone this repository to your local host. The `pilot-light` directory contains the Terraform configurations for a sample topology based on the architecture described earlier.
-    ```
-    $ git clone XXXX
-    $ cd disaster-recovery/pilot-light
-    ```
+1. Download the terraform files to your computer. The `pilot-light` directory contains the Terraform configurations for a sample topology based on the architecture described earlier.
 
-2. [Install Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html). 
+2. [Install Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html), in this lab we use version 12.
 
 3. Setup tenancy values for terraform variables by updating **env-vars** file with the required information. The file contains definitions of environment variables for your Oracle Cloud Infrastructure tenancy.
-    The following example is using London as the primary region.
+    The following example is using London as the primary region. You can visit this [link](https://www.oci-workshop.com/keys/). to create the keys.
     ![](./screenshots/100screenshots/env-vars-example.PNG)
     
    ```
