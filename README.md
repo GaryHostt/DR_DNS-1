@@ -19,7 +19,7 @@
 - [Block Volume Backups](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/blockvolumebackups.htm)
 - [Installing Terraform](https://docs.cloud.oracle.com/en-us/iaas/Content/API/SDKDocs/terraformgetstarted.htm)
 
-### [Lab100: Setup your Environment](https://github.com/arshyasharifian/DR_DNS/blob/master/Lab100/LabGuide100.md)
+### [Lab100: Setup your Environment](https://github.com/arshyasharifian/DR_DNS/blob/master/LabGuide100.md)
 - Use attached Terraform scripts to provision the environment
 - Complete standby region load balancer setup in OCI console
 - Configure DNS for home region
