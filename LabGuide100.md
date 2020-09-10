@@ -128,11 +128,11 @@ shaded out on the page. You will not be able to configure.
 ### Destroy
  If you want to delete the infrastructure, run:
     First navigate to OCI Console and terminate the Standby database and once the termination is successfull then run the following command
-    ```
-    $ terraform destroy
-    ```
-    When you’re prompted to confirm the action, enter yes.
+1.  Select destroy from the dropdown menu. 
+![](./screenshots/100screenshots/resource-manager-files/ResourceManager-Destroy.PNG)
 
+2.  Wait unitl the destroy is green.
+![](./screenshots/100screenshots/resource-manager-files/ResourceManager-Destroy-2.PNG)
 
 ## Inputs
 *The following inputs are required for terraform modules:*
