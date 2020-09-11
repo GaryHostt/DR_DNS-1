@@ -98,6 +98,51 @@ module dr_bastion_instance {
   defined_tags  = var.defined_tags
 }
 
+module dr_app_server_1 {
+  source = "./modules/server"
+
+  providers = {
+    oci.destination = oci.dr
+  }
+
+  tenancy_ocid        = var.tenancy_ocid
+  compartment_id      = var.compartment_ocid
+  source_id           = local.dr_image_id
+  subnet_id           = module.dr_network.dr_app_subnet_id
+  availability_domain = local.dr_availability_domain
+  bastion_ip          = module.dr_bastion_instance.dr_instance_ip
+  display_name        = var.appserver_1_display_name
+  hostname_label      = var.appserver_1_display_name
+  shape               = var.app_server_shape
+  ping_all_id         = module.dr_network.dr_ping_all_id
+
+  ssh_private_key_file = var.ssh_private_key_file
+  ssh_public_key_file  = var.ssh_public_key_file
+  user_data            = base64encode(data.template_file.bootstrap_src.rendered)
+}
+
+module dr_app_server_2 {
+  source = "./modules/server"
+
+  providers = {
+    oci.destination = oci.dr
+  }
+
+  tenancy_ocid        = var.tenancy_ocid
+  compartment_id      = var.compartment_ocid
+  source_id           = local.dr_image_id
+  subnet_id           = module.dr_network.dr_app_subnet_id
+  availability_domain = local.dr_availability_domain
+  bastion_ip          = module.dr_bastion_instance.dr_instance_ip
+  display_name        = var.appserver_2_display_name
+  hostname_label      = var.appserver_2_display_name
+  shape               = var.app_server_shape
+  ping_all_id         = module.dr_network.dr_ping_all_id
+
+  ssh_private_key_file = var.ssh_private_key_file
+  ssh_public_key_file  = var.ssh_public_key_file
+}
+
 module dr_public_lb {
   source = "./modules/lb"
 
@@ -110,9 +155,9 @@ module dr_public_lb {
   display_name         = var.lb_display_name
   is_private           = var.is_private_lb
   shape                = var.lb_shape
-  instance1_private_ip = null
-  instance2_private_ip = null
-  add_backend_set      = false
+  instance1_private_ip = module.dr_app_server_1.instance_ip
+  instance2_private_ip = module.dr_app_server_2.instance_ip
+  add_backend_set      = true
 }
 
 module dr_fss {
@@ -298,6 +343,7 @@ module object {
   destination_bucket_name = module.dr_object.dr_bucket_name
   destination_region_name = var.dr_region
 }
+
 
 module database {
   source = "./modules/dbaas"
