@@ -181,4 +181,3 @@ variable data_sync_frequency {
   description = "cron schedule. default runs every 30 minutes"
   default     = "*/30 * * * *"
 }
-

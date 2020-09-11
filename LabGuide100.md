@@ -112,7 +112,7 @@ shaded out on the page. You will not be able to configure.
 2.  Make sure everything looks okay and then proceed
     ![](./screenshots/100screenshots/resource-manager-files/ResourceManager-Plan-2.PNG)
 
-3.  Wait unitl the plan is green.
+3.  Wait unitl the icon turns green.
     ![](./screenshots/100screenshots/resource-manager-files/ResourceManager-Plan-3.PNG)
     
     ### Apply
@@ -121,7 +121,7 @@ shaded out on the page. You will not be able to configure.
 1.  Select apply from the dropdown menu. 
     ![](./screenshots/100screenshots/resource-manager-files/ResourceManager-Apply-1.PNG)
     
-2.  Wait unitl the apply is green.
+2.  Wait until the icon turns green.
     ![](./screenshots/100screenshots/resource-manager-files/ResourceManager-Apply-2.PNG)
 
 
@@ -131,7 +131,7 @@ shaded out on the page. You will not be able to configure.
 1.  Select destroy from the dropdown menu. 
 ![](./screenshots/100screenshots/resource-manager-files/ResourceManager-Destroy.PNG)
 
-2.  Wait unitl the destroy is green.
+2.  Wait unitl the icon turns green.
 ![](./screenshots/100screenshots/resource-manager-files/ResourceManager-Destroy-2.PNG)
 
 ## Inputs
