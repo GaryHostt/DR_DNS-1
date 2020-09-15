@@ -8,12 +8,15 @@ Disaster Recovery Network and connectivity setup
 This solution provides a Network Architecture deployment to demonstrate Disaster Recovery scenario across 2 regions [examples are geared towards region Ashburn & Phoenix, but any region in OCI can be used].
 
 
+Note: This is **not** configure for a product environment. **This is just for demo purposes.**
+
+
 ## Quickstart Deployment
 ### Prerequisites
 1.  Create your own private/public key pair on your local system.
 2.  Move the key pair to the resource-manager-bin folder.
 3.  Zip up all of the files from resource-manager-bin folder. The zip file name is not important.
-    Just make sure it has the follow structure.
+    Just make sure it has the following file structure.
     
         resource-manager-bin/
         ├── assets
@@ -126,8 +129,8 @@ shaded out on the page. You will not be able to configure.
 
 
 ### Destroy
- If you want to delete the infrastructure, run:
-    First navigate to OCI Console and terminate the Standby database and once the termination is successfull then run the following command
+ If you want to delete the infrastructure.
+    First navigate to OCI Console and terminate the Standby database and once the termination is successful then resource manager can be used to destroy the environment.
 1.  Select destroy from the dropdown menu. 
 ![](./screenshots/100screenshots/resource-manager-files/ResourceManager-Destroy.PNG)
 
@@ -231,6 +234,5 @@ You can place these HTML files in your app-tier compute nodes to demonstrate the
 
 
 ## Troubleshooting
-
 
 ### End
