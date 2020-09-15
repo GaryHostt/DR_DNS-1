@@ -147,11 +147,7 @@ Verify the application is working as expected in DR region Frankfurt by navigati
 
 ## Alternative: Run the scripts yourself ##
 
-### **STEP 1**: Configure the scripts for your tenancy
-
--   Once at the [homepage](https://demo.oracle.com/apex/f?p=DEMOWEB:HOME::::::), navigate to the "Demos" section. 
-
-### **STEP 2**: Run the scripts
+### **STEP 1**: Run the scripts
 
 Below is the command to run each script.
 ```

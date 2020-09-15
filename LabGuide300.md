@@ -59,6 +59,8 @@ Now, enter your DNS url in your web browswer, you should see the HTML indicating
 Please follow steps in [lab200](https://github.com/arshyasharifian/DR_DNS/blob/master/LabGuide200.md) to configure the SDK for your python scripts to call resources in your tenancy.
 
 ### **STEP 2**: Run Python scripts
+The python files is proved. Just copy the pythonfiles to you the bastion instance. The move you api key to the `.oci` folder. Then edit the 
+config file with the correct configurations.
 
 This [link](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#Required_Keys_and_OCIDs) will help you setup the rest api key that python needs to run scaling script.
 This [link](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm) example of a configuration file.
