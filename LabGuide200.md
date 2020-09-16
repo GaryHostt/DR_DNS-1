@@ -16,23 +16,23 @@ This lab walks your through how to automate your block and boot volumes backups 
 - Run attached Python scripts to take backups and move them from primary to standby region
 
 ### Required Artifacts
--   Included Python scripts
-    - block-volume-migration.py
-    - boot-volume-migration.py
-    - located: 
-    ```
-    .
-└── pilot-light
-    ├── README.md
-    ├── assets
-    │   ├── scripts
-    │   │   ├── README.md
-    │   │   ├── block-volume-migration.py
-    │   │   ├── boot-volume-migration.py
+    -   Included Python scripts
+        - block-volume-migration.py
+        - boot-volume-migration.py
+        - located: 
+        ```
+        .
+    └── pilot-light
+        ├── README.md
+        ├── assets
+        │   ├── scripts
+        │   │   ├── README.md
+        │   │   ├── block-volume-migration.py
+        │   │   ├── boot-volume-migration.py
 
-    ```
--   Configure OCI SDK
--   Relevant IAM permissions in your tenancy to manage [DNS](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Reference/dnspolicyreference.htm) & [block volumes](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Reference/corepolicyreference.htm#Details_for_the_Core_Services)
+    
+    -   Configure OCI SDK
+    -   Relevant IAM permissions in your tenancy to manage [DNS](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Reference/dnspolicyreference.htm) & [block volumes](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Reference/corepolicyreference.htm#Details_for_the_Core_Services)
 
 ### Extra Resources
 
@@ -120,14 +120,35 @@ On the OCI console, change to your specified DR region.
 
 Create a new compute instance in the app_subnet.
 
+
 Click "change image" and select boot volume.
 There select the restore boot volume copied over thru volume backup from source region, London.
 
+![](./screenshots/200screenshots/backup-test.PNG)
+
 Submit the instance to be created. 
+![](./screenshots/200screenshots/backup-test-2.PNG)
 
 SSH into the newly created recovered instance
 
-You can verify with curl htttp://localhost is working as long as the html is displayed.
+You can verify that the site is working with `curl http://localhost`.
+
+    [root@test-backup-1 html]# curl http://localhost
+    <html>
+    <html>
+    <body>
+    <h1>This is your primary region.</h1>
+    <p>Located in Londan. App server 1</p>
+    <img src="http://media.breitbart.com/media/2015/06/Larry-Ellison-Kimberly-White-Getty.jpg" alt="Larry Ellison" width="600" height="670">
+    </body>
+    </html>
+    </body>
+    </html>
+    
+    [root@test-backup-1 html]#
+
+
+*Follow the instructions in the [html file](HTML-Instructions.txt) to update the http for the secondary instance.*
 
 This confirms that boot volume DR scenario is working as expected.
 
@@ -137,11 +158,39 @@ Naviate to 'Attached Block Volumes" on OCI Console -> Compute -> select the comp
 
 Click attach block volume and select the restored block volume copied over through volume backup from source region, London.
 
+![](./screenshots/200screenshots/backup-test-3.PNG)
+
 Select the device path "/dev/oracleoci/oraclevdb".
+![](./screenshots/200screenshots/backup-test-4.PNG)
+
+![](./screenshots/200screenshots/backup-test-45.PNG)
+
+
+    [opc@test-backup-1 html]# sudo iscsiadm -m node -o new -T iqn.2015-12.com.oracleiaas:2cd86333-a034-416f-8606-bc4ac5332881 -p 169.254.2.2:3260
+    New iSCSI node [tcp:[hw=,ip=,net_if=,iscsi_if=default] 169.254.2.2,3260,-1 iqn.2015-12.com.oracleiaas:2cd86333-a034-416f-8606-bc4ac5332881] added
+    [opc@test-backup-1 html]# sudo iscsiadm -m node -o update -T iqn.2015-12.com.oracleiaas:2cd86333-a034-416f-8606-bc4ac5332881 -n node.startup -v automatic
+    [opc@test-backup-1 html]# sudo iscsiadm -m node -T iqn.2015-12.com.oracleiaas:2cd86333-a034-416f-8606-bc4ac5332881 -p 169.254.2.2:3260 -l
+    Logging in to [iface: default, target: iqn.2015-12.com.oracleiaas:2cd86333-a034-416f-8606-bc4ac5332881, portal: 169.254.2.2,3260] (multiple)
+    Login to [iface: default, target: iqn.2015-12.com.oracleiaas:2cd86333-a034-416f-8606-bc4ac5332881, portal: 169.254.2.2,3260] successful.
+    [opc@test-backup-1 html]# lsblk -f
+    NAME   FSTYPE LABEL UUID                                 MOUNTPOINT
+    sdb
+    └─sdb1 xfs          49cc1ddd-b390-4fbc-99a5-1cda89c0d8ef
+    sda
+    ├─sda2 swap         bf8f71d6-5bae-4981-8eae-2171e78524d6 [SWAP]
+    ├─sda3 xfs          553c3110-8f96-454c-9399-3c5c18f3d631 /
+    └─sda1 vfat         38DB-ABB6                            /boot/efi
+
 
 Finish the volume attachment.
 
 Navigate to the backend set of the public load balancer add the newly created compute to the backend set.
+
+![](./screenshots/200screenshots/load-balancer-1.PNG)
+
+![](./screenshots/200screenshots/load-balancer-2.PNG)
+
+![](./screenshots/200screenshots/load-balancer-3.PNG)
 
 Verify the application is working as expected in DR region Frankfurt by navigating to the load balancer url.
 

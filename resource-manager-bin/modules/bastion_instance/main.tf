@@ -31,6 +31,7 @@ resource oci_core_instance bastion_server {
 
   metadata = {
     ssh_authorized_keys = file(var.ssh_public_key_file)
+    user_data = "${base64encode(file("./assets/scripts/yum-update.sh"))}"
   }
 
   create_vnic_details {
@@ -89,24 +90,6 @@ resource oci_core_instance bastion_server {
       "sudo chmod +x /home/opc/block-volume-migration.py",
       "echo '${var.cron_schedule} python3 /home/opc/boot-volume-migration.py --compartment-id ${var.compartment_id} --destination-region ${var.dr_region} >> /home/opc/cron_bootvolume_log.log' | sudo tee -a /var/spool/cron/opc",
       "echo '${var.cron_schedule} python3 /home/opc/block-volume-migration.py --compartment-id ${var.compartment_id} --destination-region ${var.dr_region} >> /home/opc/cron_blockvolume_log.log' | sudo tee -a /var/spool/cron/opc",
-    ]
-  }
-}
-
-resource "null_resource" "remote-update" {
-
-  depends_on = [oci_core_instance.bastion_server]
-
-  provisioner "remote-exec" {
-    connection {
-      agent       = false
-      host        = oci_core_instance.bastion_server.public_ip
-      user        = "opc"
-      private_key = file(var.ssh_private_key_file)
-    }
-
-    inline = [
-      "sudo sleep 10; sudo yum install python36-oci-cli -y",
     ]
   }
 }

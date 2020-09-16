@@ -229,9 +229,6 @@ You can place these HTML files in your app-tier compute nodes to demonstrate the
 ## Primary Instance
 *Follow the instructions in the [html file](HTML-Instructions.txt)*
 
-## Secondary Instance
-*Follow the instructions in the [html file](HTML-Instructions.txt)*
-
 
 ## Troubleshooting
 
