@@ -117,14 +117,14 @@ Navigate to OCI Console and verify that both boot volumes and block volumes are 
 
 On the OCI console, change to your specified DR region.Create a new compute instance in the app_subnet.
 
-1. Click "change image" and select boot volume.
+1.Click "change image" and select boot volume.
 There select the restore boot volume copied over thru volume backup from source region, London.
     ![](./screenshots/200screenshots/backup-test.PNG)
     
-2. Submit the instance to be created. 
+2.Submit the instance to be created. 
     ![](./screenshots/200screenshots/backup-test-2.PNG)
 
-3. SSH into the newly created recovered instance
+3.SSH into the newly created recovered instance
 
     You can verify that the site is working with `curl http://localhost`.
     
@@ -142,9 +142,9 @@ There select the restore boot volume copied over thru volume backup from source 
         
         [root@test-backup-1 html]#
 
-4. *Follow the instructions in the [html file](HTML-Instructions.txt) to update the http for the secondary instance.*
+4.*Follow the instructions in the [html file](HTML-Instructions.txt) to update the http for the secondary instance.*
 
-5. This confirms that boot volume DR scenario is working as expected. Go to this directory with 'cd /etc/fstab', comment out the last line of UUID mapping, and save the file. 
+5.This confirms that boot volume DR scenario is working as expected. Go to this directory with 'cd /etc/fstab', comment out the last line of UUID mapping, and save the file. 
 Naviate to 'Attached Block Volumes" on OCI Console -> Compute -> select the compute you just created. 
 
     Click attach block volume and select the restored block volume copied over through volume backup from source region, London.
@@ -172,7 +172,7 @@ Naviate to 'Attached Block Volumes" on OCI Console -> Compute -> select the comp
     
     Finish the volume attachment.
 
-6. Navigate to the backend set of the public load balancer add the newly created compute to the backend set.
+6.Navigate to the backend set of the public load balancer add the newly created compute to the backend set.
 
     ![](./screenshots/200screenshots/load-balancer-1.PNG)
     
