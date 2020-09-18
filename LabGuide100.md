@@ -8,7 +8,7 @@ Disaster Recovery Network and connectivity setup
 This solution provides a Network Architecture deployment to demonstrate Disaster Recovery scenario across 2 regions [examples are geared towards region Ashburn & Phoenix, but any region in OCI can be used].
 
 
-Note: This is **not** configure for a product environment. **This is just for demo purposes.**
+Note: This is **not** configured for a product environment. **This is just for demo purposes.**
 
 
 ## Quickstart Deployment
@@ -115,7 +115,7 @@ shaded out on the page. You will not be able to configure.
 2.  Make sure everything looks okay and then proceed
     ![](./screenshots/100screenshots/resource-manager-files/ResourceManager-Plan-2.PNG)
 
-3.  Wait uniil the icon turns green.
+3.  Wait until the icon turns green.
     ![](./screenshots/100screenshots/resource-manager-files/ResourceManager-Plan-3.PNG)
     
     ### Apply
