@@ -115,11 +115,32 @@ Steps in the automation scripts:
 2. copy_volume_backups across destination region
 3. restore_volume in destination region
 
-## Verify the scripts ran from terraform-apply ##
+## Alternative: Run the scripts yourself ##
+
+### **STEP 1**: Run the scripts
+
+Below is the command to run each script.
+```
+python block-volume-migration.py --compartment-id ocid1.compartment.oc1..123 --destination-region eu-frankfurt-1 --availability-domain AD-2
+```
+
+```
+python boot-volume-migration.py --compartment-id ocid1.compartment.oc1..aaaaanq --destination-region eu-frankfurt-1 --availability-domain AD-2
+```
+
+Below you can see the volume backups now created in your source region, our's is London.
+
+![](./screenshots/200screenshots/source.png " ")
+
+And in your DR region, you should be able to see the backups there as well from your specified source region.
+
+![](./screenshots/200screenshots/destination.png " ")
+
+## Verify the backups were generated ##
 
 The terraform script configures a cron job on bastion server to run the python scripts which copies boot/block volumes and restores them across to DR region (default schedule is set for 12 hours).
 
-**The above action is taken care of immediately, you do not have to reconfigure the scheduler with the instructions below to proceed in this lab.** 
+**The previous manual step of running the scripts yourself means you do not have to reconfigure the scheduler with the instructions below to proceed in this lab.** 
 
 Navigate to OCI Console and verify that both boot volumes and block volumes are copied to DR region, in this case Frankfurt. You can tweak the cron scheduler on bastion server of Primary region using "crontab -e" for testing purposes or as needed.
 
@@ -192,26 +213,7 @@ Naviate to 'Attached Block Volumes" on OCI Console -> Compute -> select the comp
 
 Verify the application is working as expected in the Frankfurt DR region by navigating to the load balancer url.
 
-## Alternative: Run the scripts yourself ##
 
-### **STEP 1**: Run the scripts
-
-Below is the command to run each script.
-```
-python block-volume-migration.py --compartment-id ocid1.compartment.oc1..123 --destination-region eu-frankfurt-1 --availability-domain AD-2
-```
-
-```
-python boot-volume-migration.py --compartment-id ocid1.compartment.oc1..aaaaanq --destination-region eu-frankfurt-1 --availability-domain AD-2
-```
-
-Below you can see the volume backups now created in your source region, our's is London.
-
-![](./screenshots/200screenshots/source.png " ")
-
-And in your DR region, you should be able to see the backups there as well from your specified source region.
-
-![](./screenshots/200screenshots/destination.png " ")
 
 ## Part 3. Object Storage Replication
 
