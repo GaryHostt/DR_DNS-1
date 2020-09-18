@@ -9,10 +9,10 @@
 
 ## Introduction
 
-This lab walks your through how to automate your block and boot volumes backups to a new region. Should disaster strike your home region, it is critical to have the backups elsewhere. Then you will configure the Traffic Management policy where if your servers in your home region are down, your DNS entry will re-route visitors to your site to your standby region.
+This lab walks your through how to automate your block and boot volumes backups to a new region. Should disaster strike your primary region, it is critical to have the backups elsewhere. Then you will configure the Traffic Management policy - in the event that your servers in the primary region are down, your DNS entry will re-route visitors to your servers in your DR region.
 
 ### Objectives
-- Configure DNS failover to standby region in traffic management
+- Configure DNS failover to DR region in traffic management
 - Run attached Python scripts to take backups and move them from primary to standby region
 
 ### Required Artifacts
@@ -117,22 +117,24 @@ Steps in the automation scripts:
 
 ## Verify the scripts ran from terraform-apply ##
 
-The terraform script configures a cron job on bastion server to run the python scripts which copies boot/block volumes and restores them across to Standby region (default schedule is set for 12 hours).
+The terraform script configures a cron job on bastion server to run the python scripts which copies boot/block volumes and restores them across to DR region (default schedule is set for 12 hours).
 
-Navigate to OCI Console and verify that both boot volumes and block volumes are copied to standby region, in this case Frankfurt. You can tweak the cron scheduler on bastion server of Primary region using "crontab -e" for testing purposes or as needed.
+**The above action is taken care of immediately, you do not have to reconfigure the scheduler with the instructions below to proceed in this lab.** 
+
+Navigate to OCI Console and verify that both boot volumes and block volumes are copied to DR region, in this case Frankfurt. You can tweak the cron scheduler on bastion server of Primary region using "crontab -e" for testing purposes or as needed.
 
 ### Attach copied volumes to DR region compute ###
 
-On the OCI console, change to your specified DR region.Create a new compute instance in the app_subnet.
+On the OCI console, change to your specified DR region. Create a new compute instance in the app_subnet.
 
-1.Click "change image" and select boot volume.
-There select the restore boot volume copied over thru volume backup from source region, London.
+1. Click "change image" and select boot volume.
+There select the restore boot volume copied over from the volume backup from the source region, London.
     ![](./screenshots/200screenshots/backup-test.PNG)
     
-2.Submit the instance to be created. 
+2. Submit the instance to be created. 
     ![](./screenshots/200screenshots/backup-test-2.PNG)
 
-3.SSH into the newly created recovered instance
+3. SSH into the newly created instance.
 
     You can verify that the site is working with `curl http://localhost`.
     
@@ -150,9 +152,9 @@ There select the restore boot volume copied over thru volume backup from source 
         
         [root@test-backup-1 html]#
 
-4.*Follow the instructions in the [html file](HTML-Instructions.txt) to update the http for the secondary instance.*
+4. *Follow the instructions in the [html file](HTML-Instructions.txt) to update the http for the secondary instance.*
 
-5.This confirms that boot volume DR scenario is working as expected. Go to this directory with 'cd /etc/fstab', comment out the last line of UUID mapping, and save the file. 
+5. This confirms that boot volume DR scenario is working as expected. Go to this directory with 'cd /etc/fstab', comment out the last line of UUID mapping, and save the file. 
 Naviate to 'Attached Block Volumes" on OCI Console -> Compute -> select the compute you just created. 
 
     Click attach block volume and select the restored block volume copied over through volume backup from source region, London.
@@ -180,7 +182,7 @@ Naviate to 'Attached Block Volumes" on OCI Console -> Compute -> select the comp
     
     Finish the volume attachment.
 
-6.Navigate to the backend set of the public load balancer add the newly created compute to the backend set.
+6. Navigate to the backend set of the public load balancer add the newly created compute to the backend set.
 
     ![](./screenshots/200screenshots/load-balancer-1.PNG)
     
@@ -188,7 +190,7 @@ Naviate to 'Attached Block Volumes" on OCI Console -> Compute -> select the comp
     
     ![](./screenshots/200screenshots/load-balancer-3.PNG)
 
-Verify the application is working as expected in DR region Frankfurt by navigating to the load balancer url.
+Verify the application is working as expected in the Frankfurt DR region by navigating to the load balancer url.
 
 ## Alternative: Run the scripts yourself ##
 
@@ -207,7 +209,7 @@ Below you can see the volume backups now created in your source region, our's is
 
 ![](./screenshots/200screenshots/source.png " ")
 
-And in your destination region, you should be able to see the backups there as well from your specified source region.
+And in your DR region, you should be able to see the backups there as well from your specified source region.
 
 ![](./screenshots/200screenshots/destination.png " ")
 
@@ -217,7 +219,7 @@ The terraform script will also configure object storage bucket replication acros
 
 Navigate to OCI Console in your primary region to the object storage bucket and upload one or more files.
 
-Navigate to OCI Console in your standby region to the bucket and verify that the files uploaded in primary region show up.
+Navigate to OCI Console in your DR region to the bucket and verify that the files uploaded in primary region show up.
 
 Now delete the files in your primary region's bucket and verify the files are deleted in your DR region.
 
@@ -225,7 +227,7 @@ Now delete the files in your primary region's bucket and verify the files are de
 
 The terraform script will also configure rsync between the file storage systems across the regions. 
 
-A CRON job is setup in primary region on the APP-server-1 compute to take snapshot every hour and another CRON job is setup in standby region's replication compute server to do a rsync across region every 30 mins.
+A CRON job is setup in primary region on the APP-server-1 compute to take snapshot every hour and another CRON job is setup in DR region's replication compute server to do a rsync across region every 30 mins.
 
 SSH into APP-server-1 compute through the bastion host and drop a file at location '/home/opc/src_filestore/' .
 
@@ -239,11 +241,11 @@ SSH into private server IP of the replication_compute server, and navigate to '/
 
 The terraform script also configures active dataguard between the databases in both regions.
 
-Validation can be done by doing DDL/DML transactions on database in the primary region and then checking that these transactions are replicated to the database in the standby/DR region.
+Validation can be done by doing DDL/DML transactions on database in the primary region and then checking that these transactions are replicated to the database in the DR region.
 
 ## Summary
 
--   In this lab, you used the OCI Python SDK to automate your block volume backups to another region, and then restore them. You configured your DNS to route to your standby-DR region in the event of a disaster in your primary region. In the next lab, we will be simulating a disaster. You also have working rsync between your object storage buckets and file storage systems between your primary and DR regions. Lastly, the databases in your regions are now connected with Active Data Guard, but you can see how to manually configure that [here].
+-   In this lab, you used the OCI Python SDK to automate your block volume backups to another region, and then restore them. You configured your DNS to route to your DR region in the event of a disaster in your primary region. In the next lab, we will be simulating a disaster. You also have working rsync between your object storage buckets and file storage systems between your primary and DR regions. Lastly, the databases in your regions are now connected with Active Data Guard, but you can see how to manually configure that [here].
 
 -   **You are ready to move on to the next lab!**
 
