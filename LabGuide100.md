@@ -209,9 +209,10 @@ Cron schedule for synchronizing the file storage system between both standby and
 ## Create the DNS zone.
 
 ### Create a new DNS zone
-1.![](./screenshots/100screenshots/DNS-Zone.png)
+1.![](./screenshots/100screenshots/e.png)
+2.![](./screenshots/100screenshots/DNS-Zone.png)
 
-2.![](./screenshots/100screenshots/DNS-Zone-Information.png)
+3.![](./screenshots/100screenshots/DNS-Zone-Information.png)
 
 # Adding Html to the compute instances.
 
