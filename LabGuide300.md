@@ -8,13 +8,10 @@
 
 ## Introduction
 
-*In addition to the workshop*, feel free to watch the walk-through companion video by clicking on the following link:
-[Lab 300 Walkthrough Video]()
-
 ### Objectives
 - Drain connections in Primary load balancer
-- Show DNS failover to standby region
-- Scale up compute node in standby region
+- Perform DNS failover to DR region
+- Scale up compute node in DR region
 
 ### Extra Resources
 -   To learn more about Load Balancer, feel free to explore the capabilities by clicking on this link: [Load Balancer Documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/Balance/Concepts/balanceoverview.htm)
@@ -42,10 +39,10 @@ Set the drain state to True. This will stop all current connections and simulate
 
 ![](./screenshots/300screenshots/5.png)
 
-Your health check on your primary region is now failing, and traffic hitting your DNS should now be routed to your standby region. 
+Your health check on your primary region is now failing, and traffic hitting your DNS should now be routed to your DR region. 
 ![](./screenshots/300screenshots/300a.png)
 
-If you installed the HTML to your standby server, you should now see this. You can see our DNS entry - 'oci.life' with the subdomain 'alexmcdonald'.
+If you installed the HTML to your DR server, you should now see this. You can see our DNS entry - 'oci.life' with the subdomain 'alexmcdonald'.
 ![](./screenshots/300screenshots/300c.png)
 
 If you navigate to health/check traffic steering - you can see the health for the Primary region load balancer is now critical. If you visit the IP address of this load balancer, you will get 502 bad gateway. 
