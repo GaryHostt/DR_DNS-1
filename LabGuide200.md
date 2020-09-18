@@ -115,7 +115,7 @@ Steps in the automation scripts:
 2. copy_volume_backups across destination region
 3. restore_volume in destination region
 
-## Alternative: Run the scripts yourself ##
+## Run the scripts manually ##
 
 ### **STEP 1**: Run the scripts
 
