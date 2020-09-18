@@ -115,7 +115,7 @@ shaded out on the page. You will not be able to configure.
 2.  Make sure everything looks okay and then proceed
     ![](./screenshots/100screenshots/resource-manager-files/ResourceManager-Plan-2.PNG)
 
-3.  Wait unitl the icon turns green.
+3.  Wait uniil the icon turns green.
     ![](./screenshots/100screenshots/resource-manager-files/ResourceManager-Plan-3.PNG)
     
     ### Apply
