@@ -134,7 +134,7 @@ shaded out on the page. You will not be able to configure.
 1.  Select destroy from the dropdown menu. 
 ![](./screenshots/100screenshots/resource-manager-files/ResourceManager-Destroy.PNG)
 
-2.  Wait unitl the icon turns green.
+2.  Wait until the icon turns green.
 ![](./screenshots/100screenshots/resource-manager-files/ResourceManager-Destroy-2.PNG)
 
 ## Inputs
@@ -206,21 +206,12 @@ Cron schedule for synchronizing the file storage system between both standby and
 
  ![](./screenshots/100screenshots/DB-System(Secondary).PNG)
  
-## Configuring the DNS for failover.
+## Create the DNS zone.
 
 ### Create a new DNS zone
 1.![](./screenshots/100screenshots/DNS-Zone.png)
 
 2.![](./screenshots/100screenshots/DNS-Zone-Information.png)
-
-### Attach a subdomain to the DNS zone
-1.![](./screenshots/100screenshots/DNS-Zone-Subdomain-Step1.png)
-
-2.![](./screenshots/100screenshots/DNS-Zone-Subdomain-Step2.png)
-
-3.Publish to finish attaching.
-
-![](./screenshots/100screenshots/Failover-Policy-Publish.png)
 
 # Adding Html to the compute instances.
 
