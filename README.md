@@ -1,4 +1,4 @@
-# Oracle’s Cloud Platform: Disaster Recovery
+# Oracle’s Cloud Platform: Pilot Light - App & DB
 
 <!-- Comment out table of contents
 ## Table of Contents
