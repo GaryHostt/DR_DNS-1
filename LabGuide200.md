@@ -78,6 +78,14 @@ Make sure to attach the health check to your primary region's load balancer, thi
 
 This is a summary of your traffic steering policy.
 
+### Attach a subdomain to the DNS zone
+1.![](./screenshots/100screenshots/DNS-Zone-Subdomain-Step1.png)
+
+2.![](./screenshots/100screenshots/DNS-Zone-Subdomain-Step2.png)
+
+3.Publish to finish attaching.
+
+![](./screenshots/100screenshots/Failover-Policy-Publish.png)
 
 ## Part 2. Block & boot volume backup automation with Python
 
