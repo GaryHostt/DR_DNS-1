@@ -222,6 +222,15 @@ You can place these HTML files in your app-tier compute nodes to demonstrate the
 *Follow the instructions in the [html file](HTML-Instructions.txt)*
 
 
+### Create a Health Check
+1.![](./screenshots/100screenshots/health-check/health-check-console.png)
+
+2.![](./screenshots/100screenshots/health-check/health-check-name.png)
+
+3.![](./screenshots/100screenshots/health-check/health-check-port.png)
+
+4.![](./screenshots/100screenshots/health-check/health-check-tag.png)
+
 ## Troubleshooting
 
 ### End
