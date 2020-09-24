@@ -13,8 +13,7 @@ Note: This is **not** configured for a product environment. **This is just for d
 
 ## Quickstart Deployment
 ### Prerequisites
-1.  Download this zip file:
-<a id="raw-url" href="https://github.com/GaryHostt/DR_DNS-1/blob/master/resource-manager-bin.zip">Download FILE</a>
+1. <a id="raw-url" href="https://github.com/GaryHostt/DR_DNS-1/blob/master/resource-manager-bin.zip?raw=true">Download ZIP</a>
 2.  Create your own private/public key pair on your local system.
 3.  Move the key pair to the resource-manager-bin folder.
 4.  Zip up all of the files from resource-manager-bin folder. The zip file name is not important.
