@@ -13,9 +13,11 @@ Note: This is **not** configured for a product environment. **This is just for d
 
 ## Quickstart Deployment
 ### Prerequisites
-1.  Create your own private/public key pair on your local system.
-2.  Move the key pair to the resource-manager-bin folder.
-3.  Zip up all of the files from resource-manager-bin folder. The zip file name is not important.
+1.  Download this zip file:
+<a id="raw-url" href="https://github.com/GaryHostt/DR_DNS-1/blob/master/resource-manager-bin.zip">Download FILE</a>
+2.  Create your own private/public key pair on your local system.
+3.  Move the key pair to the resource-manager-bin folder.
+4.  Zip up all of the files from resource-manager-bin folder. The zip file name is not important.
     Just make sure it has the following file structure.
     
         resource-manager-bin/
