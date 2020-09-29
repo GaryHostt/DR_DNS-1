@@ -7,7 +7,7 @@
 
 ## Introduction
 
-![Alt text](./failover_SS.png?raw=true "Title")
+![Alt text](./pic.png?raw=true "Title")
 
 ### Objectives
 - Enable application & database DR across regions on OCI
