@@ -78,7 +78,7 @@ Note: This is **not** configured for a product environment. **This is just for d
         ├── terraform.tfvars
         └── variables.tf
     
-## Resource Manager
+## **Step 1:** Resource Manager
 
 The following section will show you how to configure resource manager to make the deployment easier. Anything that is 
 shaded out on the page. You will not be able to configure.
@@ -207,7 +207,7 @@ Cron schedule for synchronizing the file storage system between both standby and
 
  ![](./screenshots/100screenshots/DB-System(Secondary).PNG)
  
-## Create the DNS zone.
+## **Step 2:** Create the DNS zone.
 
 ### Create a new DNS zone
 1.![](./screenshots/100screenshots/e.png)
@@ -215,13 +215,12 @@ Cron schedule for synchronizing the file storage system between both standby and
 
 3.![](./screenshots/100screenshots/DNS-Zone-Information.png)
 
-# Adding Html to the compute instances.
+# **Step 3:** Adding Html to the compute instances.
 
 You can place these HTML files in your app-tier compute nodes to demonstrate the DR working by displaying different HTML pages depending on which region you are hitting. You can see this information in the IP address as well, but this is additional visual stimulation.
 
-## Primary Instance
+### Primary Instance
 *Follow the instructions in the [html file](HTML-Instructions.txt)*
-
 
 ### Create a Health Check
 1.![](./screenshots/100screenshots/health-check/health-check-console.png)
@@ -231,7 +230,5 @@ You can place these HTML files in your app-tier compute nodes to demonstrate the
 3.![](./screenshots/100screenshots/health-check/health-check-port.png)
 
 4.![](./screenshots/100screenshots/health-check/health-check-tag.png)
-
-## Troubleshooting
 
 ### End
