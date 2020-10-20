@@ -1,4 +1,4 @@
-# Lab 300: Simulate Disaster
+# Lab 3: Simulate Disaster
 <!-- Comment out table of contents
 ## Table of Contents
 [Introduction](#introduction)
@@ -17,7 +17,7 @@
 -   To learn more about Load Balancer, feel free to explore the capabilities by clicking on this link: [Load Balancer Documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/Balance/Concepts/balanceoverview.htm)
 -   To learn more about , how the OCI API scales up the compute node, here is the relevant [documentation](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/UpdateInstanceDetails).
 
-## Part 1. The Disaster
+## **Step 1:** The Disaster
 
 ### Drain connections from Primary Region Load Balancer
 
@@ -49,13 +49,13 @@ If you navigate to health/check traffic steering - you can see the health for th
 
 Now, enter your DNS url in your web browswer, you should see the HTML indicating you are now seeing traffic steered to your standby region. 
 
-## Part 2. Scaling the standby region compute node
+## **Step 2:** Scaling the standby region compute node
 
-### **STEP 1**: Configure SDK
+### Configure SDK
 
 Please follow steps in [lab200](https://github.com/arshyasharifian/DR_DNS/blob/master/LabGuide200.md) to configure the SDK for your python scripts to call resources in your tenancy.
 
-### **STEP 2**: Run Python scripts
+### Run Python scripts
 The python files is proved. Just copy the python files to you the bastion instance. Then move your API key to the `.oci` folder. Then edit the 
 config file with the correct configurations.
 
