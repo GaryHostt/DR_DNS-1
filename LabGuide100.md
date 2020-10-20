@@ -1,4 +1,4 @@
-# Disaster Recovery
+# Lab 1: Disaster Recovery
 
 ![](./screenshots/200screenshots/intro.png)
 
