@@ -24,12 +24,12 @@ Estimated lab time: 3 hours
   - Setup DNS on OCI
   - Simulate disaster and subsequent recovery
 
-### [Lab 1: Setup your Environment](https://github.com/arshyasharifian/DR_DNS/blob/master/LabGuide100.md)
+### [Lab 1: Setup your Environment](https://github.com/GaryHostt/DR_DNS-1/blob/master/LabGuide100.md)
 - Use attached Terraform scripts to provision the environment
 - Complete standby region load balancer setup in OCI console
 - Configure DNS for primary region
   
-### [Lab 2: Configure Failover & Recovery Backups](https://github.com/arshyasharifian/DR_DNS/blob/master/LabGuide200.md)
+### [Lab 2: Configure Failover & Recovery Backups](https://github.com/GaryHostt/DR_DNS-1/blob/master/LabGuide200.md)
 - Configure DNS failover to DR region in traffic management
 - Manually run attached Python scripts to take backups and move the backups from primary to DR region
   - Ability to run as cron job for production
@@ -37,7 +37,7 @@ Estimated lab time: 3 hours
 - See how terraform will configure your backup automation, rsync, and Active Data Guard
   - Database DR is setup with data guard in the terraform scripts, but the [subsequent lab](INSERT) will show the manual configuration of dataguard
 
-### [Lab 3: Simulate Disaster](https://github.com/arshyasharifian/DR_DNS/blob/master/LabGuide300.md)
+### [Lab 3: Simulate Disaster](https://github.com/GaryHostt/DR_DNS-1/blob/master/LabGuide300.md)
 - Drain connections in Primary load balancer
 - Perform DNS failover to DR region
 - Scale up compute node in DR region
