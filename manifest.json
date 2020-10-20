@@ -6,17 +6,17 @@
             "filename": "./README.md"
         },
         {
-            "title": "Lab 100: Setup your Environment",
+            "title": "Lab 1: Setup your Environment",
             "publisheddate": "09/03/2020",
             "filename": "./LabGuide100.md"
         },
         {
-            "title": "Lab 200: Configure Failover & Recovery Backups",
+            "title": "Lab 2: Configure Failover & Recovery Backups",
             "publisheddate": "09/03/2020",
             "filename": "./LabGuide200.md"
         },
         {
-            "title": "Lab 300: Simulate Disaster",
+            "title": "Lab 3: Simulate Disaster",
             "publisheddate": "09/03/2020",
             "filename": "./LabGuide300.md"
         }
