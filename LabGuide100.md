@@ -220,7 +220,22 @@ Cron schedule for synchronizing the file storage system between both standby and
 You can place these HTML files in your app-tier compute nodes to demonstrate the DR working by displaying different HTML pages depending on which region you are hitting. You can see this information in the IP address as well, but this is additional visual stimulation.
 
 ### Primary Instance
-*Follow the instructions in the [html file](HTML-Instructions.txt)*
+*Follow these instructions*
+
+```
+# Replace the text in index.html with the text from PRIMARY.html.
+# sudo vi /var/www/html/index.html
+
+# Replace the text in index.html with the text from PRIMARY.html.
+# sudo vi /var/www/html/index.html
+
+# Replace the text in index.html with the text from STANDBY.html.
+# sudo vi /var/www/html/index.html
+
+# After you have updated the index.html on there respected instances.
+# run the following command.
+# sudo systemctl restart httpd
+```
 
 ### Create a Health Check
 1.![](./screenshots/100screenshots/health-check/health-check-console.png)
